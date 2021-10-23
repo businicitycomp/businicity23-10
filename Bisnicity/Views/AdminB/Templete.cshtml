@@ -1,0 +1,87 @@
+﻿@model IEnumerable<BisnicityApp.Entites.Templete>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Templete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Templet</h3>
+                <!-- <p class="text-subtitle text-muted">For user to check they list</p> -->
+            </div>
+
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+
+            <div class="card-body">
+                <table class="table table-striped" id="table1">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>BackGroundTemp</th>
+                            <th>LogoTemp</th>
+                            <th>ChosePrice</th>
+                            <th>TempleteName</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TempleteID)
+                                </td>
+                                <td>
+                                    @*@Html.DisplayFor(modelItem => item.LogoTemp)*@
+                                    <img src="~/Uploads/@item.BackgroundTemp"
+                                         style="width:64px"
+                                         asp-append-version="true" />
+                                </td>
+                                <td>
+                                    @*@Html.DisplayFor(modelItem => item.LogoTemp)*@
+                                    <img src="~/Uploads/@item.LogoTemp"
+                                         style="width:64px"
+                                         asp-append-version="true" />
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ChoesePrice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CatTemp.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserId)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserId))
+
+                                </td>
+                                <td>
+                                    <a href=@Url.Action("EditTemp", "AdminB",new {id=item.TempleteID }) class="badge bg-success edithover">Edit</a>
+                                    <a href=@Url.Action("Deletetemp", "AdminB",new {id=item.TempleteID }) class="badge bg-danger deletehover">Delete</a>
+                                </td>
+                            </tr>
+
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+</div>
+

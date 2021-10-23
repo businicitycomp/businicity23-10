@@ -1,0 +1,8 @@
+.edithover:hover{
+    cursor: pointer;
+    color: black;
+}
+.deletehover:hover{
+    cursor: pointer;
+    color: black;
+}

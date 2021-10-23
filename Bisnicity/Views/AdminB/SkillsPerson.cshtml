@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BisnicityApp.Entites.SkillsPerson>
+
+@{
+    ViewData["Title"] = "SkillsPerson";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>SkillsPerson</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SkillsName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Courses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillsName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Courses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                <a href=@Url.Action("EditSkillsPerson","AdminB",new {id=item.SkillsPersonID}) class="badge bg-success edithover">Edit</a>
+                <a href=@Url.Action("", "AdminB",new {id=item.SkillsPersonID }) class="badge bg-danger deletehover">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

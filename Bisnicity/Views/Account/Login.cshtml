@@ -1,0 +1,34 @@
+﻿@model LoginViewModel
+@{
+    ViewBag.Title = BisnicityKey.Login;
+    Layout = "_Layout";
+}
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-controller="Account" asp-action="Login">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="sEmail"></label>
+                <input asp-for="sEmail" class="form-control" />
+                <span asp-validation-for="sEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sPassword"></label>
+                <input asp-for="sPassword" class="form-control" />
+                <span asp-validation-for="sPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label asp-for="bRemberMe">
+                        <input asp-for="bRemberMe" />
+                        <span>@BisnicityKey.Rememberme</span>
+                    </label>
+                </div>
+                <div>
+                    <a asp-action="ForgotPassword">Forgot Password?</a>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>

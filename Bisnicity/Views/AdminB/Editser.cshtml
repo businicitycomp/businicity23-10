@@ -1,0 +1,48 @@
+﻿@model Bisnicity.Models.serviceviewmodel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@{
+    ViewData["Title"] = "Editser";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Editser</h1>
+
+<h4>Services</h4>
+<hr />
+<div class="row">
+    @*<div class="col-md-4">*@
+    
+    <form asp-action="Editser" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ServiceID" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="userid" />
+        <div class="form-group co-md-4">
+            <label asp-for="Servicename" class="control-label"></label>
+            <input asp-for="Servicename" class="form-control" />
+            <span asp-validation-for="Servicename" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="paragraph" class="control-label"></label>
+            <input asp-for="paragraph" class="form-control" />
+            <span asp-validation-for="paragraph" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image" class="control-label"></label>
+            <input type="file" asp-for="@Model.Image" class="form-control" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+    </div>
+@*</div>*@
+
+<div>
+    <a asp-action="Service">Back to List</a>
+</div>
+

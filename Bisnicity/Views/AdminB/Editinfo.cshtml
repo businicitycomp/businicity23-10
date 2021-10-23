@@ -1,0 +1,39 @@
+﻿@model BisnicityApp.Entites.Info
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Editinfo";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Editinfo</h1>
+
+<h4>Info</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Editinfo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="InfoID" />
+         
+            <div class="form-group">
+                <label asp-for="Linklinkedin" class="control-label"></label>
+                <input asp-for="Linklinkedin" class="form-control" />
+                <span asp-validation-for="Linklinkedin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="HomeAdmin">Back to List</a>
+</div>
+

@@ -1,0 +1,44 @@
+﻿@model BisnicityApp.Entites.Templete
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@{
+    ViewData["Title"] = "Deletetemp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Deletetemp</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Templete</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BackgroundTemp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BackgroundTemp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LogoTemp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LogoTemp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChoesePrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChoesePrice)
+        </dd>
+
+
+    </dl>
+
+    <form asp-action="Deletetemp">
+        <input type="hidden" asp-for="TempleteID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Templete">Back to List</a>
+    </form>
+</div>

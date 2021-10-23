@@ -1,0 +1,181 @@
+﻿@{ 
+    var ses=TempData["sessionad"] ?? string.Empty;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/assetsAdmin/css/bootstrap.css">
+
+    <link rel="stylesheet" href="~/assetsAdmin/vendors/simple-datatables/style.css">
+
+    <link rel="stylesheet" href="~/assetsAdmin/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/assetsAdmin/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/assetsAdmin/css/app.css">
+    <link rel="shortcut icon" href="~/assetsAdmin/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="~/assetsAdmin/css/style.css">
+    <link href="~/css/toastr.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href=@Url.Action("AdminPanel","AdminB")>
+                                <img src="~/assetsAdmin/images/logo/logo-businicity.png" alt="Logo" width="60"
+                                     style="height: 3.2rem;">
+                            </a>
+                        </div>
+                        <a href=@Url.Action("AdminPanel","AdminB")>
+                            <h3 style="margin-top: 6%;"> Businicity</h3>
+                        </a>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">Welcome <h2>@ses</h2></li>
+
+                        <li class="sidebar-item btn-info">
+                            <a href=@Url.Action("AdminPanel","AdminB") class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>table Info</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("HomeAdmin","AdminB")>Info</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("OurServiceAdmin","AdminB")>OurService</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("Templete","AdminB")>Templet</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("Service","AdminB")>Service</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("CatTemp","AdminB")>Category</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>table Person</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("profilePerson","AdminB")>Person</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("DetailsPerson","AdminB")>DetailsPerson</a>
+                                </li>
+
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("SkillsPerson","AdminB")>SkillsPerson</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("CatPrson","AdminB")>CategoryPerson</a>
+                                </li>
+                            </ul>
+                            <a href=@Url.Action("addadmin","AdminB") class='sidebar-link'>
+                                <i class="bi bi-person"></i>
+                                <span>Add Admin</span>
+                            </a>
+                            <a href=@Url.Action("AddJobAdmin","AdminB") class='sidebar-link'>
+                                <i class="bi bi-person"></i>
+                                <span>Add Job</span>
+                            </a>
+                            <a href=@Url.Action("CreateRole","AdminB") class='sidebar-link'>
+                                <i class="bi bi-person"></i>
+                                <span>Add Role</span>
+                            </a>
+
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>LeadersShip</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("Idea","AdminB")>Idea</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("Invistor","AdminB")>Invistor</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("SuportIdea","AdminB")>SuportIdea</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("DataVocation","AdminB")>DataVocation</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("DataPersonTranning","AdminB")>DataPersonTranning</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("Post","AdminB")>Post</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href=@Url.Action("Volunteer","AdminB")>Volunteer</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
+        @RenderBody()
+    </div>
+    <script src="~/assetsAdmin/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/assetsAdmin/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/assetsAdmin/vendors/apexcharts/apexcharts.js"></script>
+    <script src="~/assetsAdmin/js/pages/dashboard.js"></script>
+    <script src="~/assetsAdmin/vendors/simple-datatables/simple-datatables.js"></script>
+
+    <script>
+        // Simple Datatable
+        let table1 = document.querySelector('#table1');
+        let dataTable = new simpleDatatables.DataTable(table1);
+    </script>
+    <script src="~/assetsAdmin/js/main.js"></script>
+    <script src="~/assetsAdmin/js/main.js"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+</body>
+</html>
+

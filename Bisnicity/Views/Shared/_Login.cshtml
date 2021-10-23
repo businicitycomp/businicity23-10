@@ -1,0 +1,135 @@
+﻿@model Bisnicity.Models.Login
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    var mess = TempData["messsages"] ?? string.Empty;
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/login2/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/login2/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/login2/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/login2/css/style.css">
+
+
+    <title>BusnisCity Sign In Of Company</title>
+    <link rel="icon" href="~/assets/images/logo-businicity.png" type="image/x-icon">
+    <link href="~/css/toastr.css" rel="stylesheet" />
+    <link href="~/css/img.css" rel="stylesheet" />
+</head>
+
+<body class="LoginBuseness">
+
+
+
+    <div class="content">
+        <div class="container">
+            <div class="position-relative">
+                <div class="position-absolute top-0 start-0">
+                    <a href=@Url.Action("Index1","Home")>
+                        <span class="icon-home mr-3 text-dark"> Home </span>
+                    </a>
+
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-5">
+                        <img src="~/assets/images/logo-businicity.png" alt="" width="100%" height="100%">
+                    </div>
+
+                    <div class="col-md-5 contents">
+                        <span class="icon-facebook mr-3 text-white"></span>
+                        <span class="icon-whatsapp mr-3 text-white"></span>
+                        <span class="icon-instagram mr-3 text-white"></span>
+                        <span class="icon-youtube mr-3 text-white"></span>
+                        <span class="icon-twitter mr-3 text-white"></span>
+                        <div class="form-block">
+
+                            <div class="mb-4">
+                                <h3>Sign In to <strong>BusnisCity</strong></h3>
+
+                            </div>
+                            <form asp-action="Login" asp-controller="SignUp" enctype="multipart/form-data" method="post">
+                                <div class="form-group first">
+                                    <label for="Email">Email</label>
+                                    <input asp-for="@Model.Email" type="email" class="form-control">
+
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="password">Password</label>
+                                    <input asp-for="@Model.Password" type="password" class="form-control">
+
+                                </div>
+
+                                <div class="d-flex mb-5 align-items-center">
+                                    <label class="control control--checkbox mb-0">
+                                        <span class="caption">
+                                            Remember
+                                            me
+                                        </span>
+                                        <input type="checkbox" checked="checked" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                                </div>
+
+                                <input type="submit" value="Log In" class="btn btn-pill text-white btn-block"
+                                       style="background-color:#15878e ;">
+
+
+
+
+
+                            </form>
+                            @*<div class="text-center">
+                                &mdash; or &mdash;<br>
+                                sign in with
+                            </div>*@
+                            <div class="social-login text-center">
+                                @*<a href="#" class="facebook btn btn-pill btn-block">
+                                    <span class="icon-facebook mr-3"></span>
+                                </a>
+                                <a href="#" class="google btn btn-pill btn-block">
+                                    <span class="icon-google mr-3"></span>
+                                </a>*@
+                                I Dont Have Account <a class="text-danger" href=@Url.Action("SignUp","SignUp")> Sign up</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/login2/js/jquery-3.3.1.min.js"></script>
+    <script src="~/login2/js/popper.min.js"></script>
+    <script src="~/login2/js/bootstrap.min.js"></script>
+    <script src="~/login2/js/main.js"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var ss = '@mess';
+        if (ss) {
+            toastr.error(ss);
+        }
+    })
+</script>
+

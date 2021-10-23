@@ -1,0 +1,74 @@
+﻿@model IEnumerable<BisnicityApp.Entites.SuppourtIdea>
+
+@{
+    ViewData["Title"] = "SuportIdea";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>SuportIdea</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Commercialrecord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Careerslicense)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CertificateofRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Targetsector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commercialrecord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Careerslicense)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CertificateofRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Targetsector.namesector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeCompany.Typename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

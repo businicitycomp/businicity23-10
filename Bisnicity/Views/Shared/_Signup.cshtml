@@ -1,0 +1,187 @@
+﻿@model Bisnicity.Models.SiginUpViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var mess = TempData["mess"] ?? string.Empty;
+
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="~/css/aos.min.css" rel="stylesheet">
+    <link href="~/css/swiper.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/css/sign.css">
+    <link rel="stylesheet" href="~/css/img.css">
+    <link href="~/css/toastr.css" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/assets/images/favicon.png">
+    <title>BusnisCity Sign Up of Company</title>
+    <link rel="icon" href="~/assets/images/logo-businicity.png" type="image/x-icon">
+</head>
+
+<body class="signUpBuseness">
+
+
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <a href=""><img src="~/assets/images/logo-businicity.png" alt="" width="75%"> </a>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="wrap d-md-flex">
+
+                        <div class="login-wrap p-4 p-md-5 col-md-12">
+                            <div class="row justify-content-center py-md-5">
+                                <div class="col-lg-9">
+                                    <div class="social-wrap">
+                                        <h3 class="mb-3 text-center">Signup with BusinessCity </h3>
+                                        <p class="social-media d-flex justify-content-center">
+                                            <a href="#"
+                                               class="social-icon google d-flex align-items-center justify-content-center">
+                                                <span class="fa fa-google"></span>
+                                            </a>
+                                            <a href="#"
+                                               class="social-icon facebook d-flex align-items-center justify-content-center">
+                                                <span class="fa fa-facebook"></span>
+                                            </a>
+                                            <a href="#"
+                                               class="social-icon twitter d-flex align-items-center justify-content-center">
+                                                <span class="fa fa-twitter"></span>
+                                            </a>
+                                            <a href="#"
+                                               class="social-icon youtube d-flex align-items-center justify-content-center">
+                                                <span class="fa fa-youtube"></span>
+                                            </a>
+                                            <a href="#"
+                                               class="social-icon Insta d-flex align-items-center justify-content-center">
+                                                <span class="fa fa-instagram"></span>
+                                            </a>
+                                        </p>
+                                        <p class="or">
+                                            <span>or</span>
+                                        </p>
+                                    </div>
+                                    <form asp-action="SignUp" asp-controller="SignUp" method="post" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label" for="name">First Name</label>
+                                                    <input asp-for="@Model.FirstName" type="text" class="form-control">
+                                                    <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label" for="name">Last Name</label>
+                                                    <input asp-for="@Model.LastName" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="email">Email Address</label>
+                                                    <input asp-for="@Model.Email" type="email" class="form-control">
+                                                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="name">Phone Number</label>
+                                                    <input asp-for="@Model.PhoneNo" type="tel" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="name">Company Name</label>
+                                                    <input asp-for="@Model.CompanyName" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+
+                                                    <label class="label" for="password">Password</label>
+                                                    <input asp-for="@Model.Password" type="password" class="form-control">
+                                                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+
+                                                    <label class="label" for="LinkLinkedIN">LinkLinkedIN</label>
+                                                    <input asp-for="@Model.Linklinkedin" type="url" class="form-control">
+                                                    <span asp-validation-for="@Model.Linklinkedin" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+
+                                                    <label class="label">ImageProfile</label>
+                                                    <input asp-for="@Model.ImageProfile" type="file" class="form-control">
+                                                    <span asp-validation-for="@Model.ImageProfile" class="text-danger"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="  Create an account" class="btn submit p-3 text-white"
+                                                           style="background-color: #178b90;" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                    <div class="w-100">
+                                        <p class="mt-4  text-center">
+                                            I Have Account <a href="@Url.Action("Login","SignUp")"
+                                                              class="text-danger">
+                                                Sign
+                                                In
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var ss = '@mess';
+        if (ss) {
+            toastr.error(ss);
+        }
+    })
+</script>
+
+
+

@@ -1,0 +1,85 @@
+﻿@model BisnicityApp.Entites.OurServices
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@{
+    ViewData["Title"] = "Editourserv";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Editourserv</h1>
+
+<h4>OurServices</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editourserv">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OurServicesID" />
+            <div class="form-group">
+                <label asp-for="AbuotServ" class="control-label"></label>
+                <input asp-for="AbuotServ" class="form-control" />
+                <span asp-validation-for="AbuotServ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AboutUs" class="control-label"></label>
+                <input asp-for="AboutUs" class="form-control" />
+                <span asp-validation-for="AboutUs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkFace" class="control-label"></label>
+                <input asp-for="LinkFace" class="form-control" />
+                <span asp-validation-for="LinkFace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkTwet" class="control-label"></label>
+                <input asp-for="LinkTwet" class="form-control" />
+                <span asp-validation-for="LinkTwet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkInsta" class="control-label"></label>
+                <input asp-for="LinkInsta" class="form-control" />
+                <span asp-validation-for="LinkInsta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkWats" class="control-label"></label>
+                <input asp-for="LinkWats" class="form-control" />
+                <span asp-validation-for="LinkWats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GoogleMapLink" class="control-label"></label>
+                <input asp-for="GoogleMapLink" class="form-control" />
+                <span asp-validation-for="GoogleMapLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyNo" class="control-label"></label>
+                <input asp-for="CompanyNo" class="form-control" />
+                <span asp-validation-for="CompanyNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DomainName" class="control-label"></label>
+                <input asp-for="DomainName" class="form-control" />
+                <span asp-validation-for="DomainName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="OurServiceAdmin">Back to List</a>
+</div>
+

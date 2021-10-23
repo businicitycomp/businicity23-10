@@ -1,0 +1,75 @@
+﻿@{
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow"
+         style="background-image: url(../assets/images/footer.png)">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href=@Url.Action("Index1","Home")>
+                <img src="~/assets/images/logowhite.png" alt=""
+                     width="100" height="auto">
+            </a>
+
+            <a class="navbar-brand text-white fs-2" href=@Url.Action("Index1","Home")>Businicity</a>
+            <button class="navbar-toggler collapsed bg-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-content">
+                <div class="hamburger-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-content" style="margin-left: 50%;">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white fs-6" aria-current="page" href=@Url.Action("Index1","Home")>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-6" href=@Url.Action("AboutUs","Home")>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-6" href=@Url.Action("ITsolution","Home")>Solution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-6" href=@Url.Action("BuntEN","Home")>BIT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-6" href=@Url.Action("BlogsEn","Home")>Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-6" href=@Url.Action("ContactUs","Home")>Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-6" data-bs-toggle="modal" href="#login" role="button">LogIn</a>
+                    </li>
+
+                </ul>
+                <div class="d-flex ms-auto">
+                    <partial name="_SelectLangagePartial"/>
+                    @*<a class="text-white fs-5" style="text-decoration: none;" href=@Url.Action("IndexAR","Home")>|AR </a>*@
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="login" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-white" style="background-color: #0c6e78;">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">Login</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Choose the type of the Login
+                </div>
+                <div class="modal-footer " dir="ltr">
+                    <a href="@(Url.Action("Login","Account"))" type="button" class="btn text-white" style="background-color:#0c6e78 ;">@BisnicityKey.Login</a>
+                    <a href="@(Url.Action("Register","Account"))" type="button" class="btn text-white" style="background-color:#0c6e78 ;">@BisnicityKey.Regiseter</a>
+                    <a href="#" type="button" class="btn text-white" style="background-color:#0c6e78 ;">PERSON</a>
+                    <a href="#" type="button" class="btn text-white" style="background-color:#0c6e78 ;">INVESTOR</a>
+                    <a href="#" type="button" class="btn text-white" style="background-color:#0c6e78 ;">SUPPORT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<BisnicityApp.Entites.CatTemp>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "CatTemp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Category</h3>
+                <a class="btn btn-success" href=@Url.Action("CreateCat","AdminB")> + Add Category</a>
+            </div>
+
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+
+            <div class="card-body">
+                <table class="table table-striped" id="table1">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Url</th>
+                            <th>OneMonth</th>
+                            <th>SixMonth</th>
+                            <th>OneYears</th>
+                            <th>Acions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+
+                        {
+
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CatTempID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    <img src=~/UploadsCategory/@item.Image
+                                         style="width:64px"
+                                         asp-append-version="true" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.url)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OnMonth)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SixMointh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OnYears)
+                                </td>
+                                <td>
+                                    <a href=@Url.Action("Editcat","AdminB",new {id=item.CatTempID}) class="badge bg-success edithover">Edit</a>
+                                    <a href=@Url.Action("Deletecat","AdminB",new {id=item.CatTempID }) class="badge bg-danger deletehover">Delete</a>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+
+
+
+

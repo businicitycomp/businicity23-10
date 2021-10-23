@@ -1,0 +1,54 @@
+﻿.Person {
+    background-image:url('../assets/images/person.jpg');
+    background-size:cover;
+    opacity:0.5;
+}
+.Buseness {
+    background-image: url('../assets/images/businis 1.jpg');
+    background-size: cover;
+}
+.idea1 {
+    background-image: url(../assets/images/back11.jpg)
+}
+.supportidea {
+    background-image: url(../assets/images/back11.jpg)
+}
+.signUpPerson {
+    background-image: url('../assets/images/digital-marketing-businessman-using-modern-interface-payments-online-shopping-icon-customer-network-connection-virtual-screen (1).jpg');
+    background-size:cover;
+}
+.LoginPerson {
+    background-image: url('../assets/images/digital-marketing-businessman-using-modern-interface-payments-online-shopping-icon-customer-network-connection-virtual-screen (1).jpg');
+    background-size: cover;
+}
+.signUpBuseness {
+    background-image: url('../assets/images/digital-marketing-businessman-using-modern-interface-payments-online-shopping-icon-customer-network-connection-virtual-screen (1).jpg');
+    background-size: cover;
+}
+.LoginBuseness {
+    background-image: url('../assets/images/digital-marketing-businessman-using-modern-interface-payments-online-shopping-icon-customer-network-connection-virtual-screen (1).jpg');
+    background-size: cover;
+}
+.EditPersonProfile {
+    background-image: url('../assets/images/digital-marketing-businessman-using-modern-interface-payments-online-shopping-icon-customer-network-connection-virtual-screen (1).jpg');
+    background-size: cover;
+}
+.EditBusenessProfile {
+    background-image: url('../assets/images/digital-marketing-businessman-using-modern-interface-payments-online-shopping-icon-customer-network-connection-virtual-screen (1).jpg');
+    background-size: cover;
+}
+.cartCompany {
+    background-image: url('../assets/images/61769.jpg');
+    background-size: cover;
+}
+.AddPersonDeatails {
+    background-image: url('../assets/images/digital-marketing-businessman-using-modern-interface-payments-online-shopping-icon-customer-network-connection-virtual-screen (1).jpg');
+    background-size: cover;
+}
+
+.Apply {
+    background-image: url('../assets/images/footer.png');
+    background-size: cover;
+}
+
+

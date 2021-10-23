@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BisnicityApp.Entites.PostCompany>
+
+@{
+    ViewData["Title"] = "Post";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Post</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TitelePost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetailsPost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitelePost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DetailsPost)
+            </td>
+            <td>
+                <img src=~/postImages/@item.ImagePost
+                     style="width:64px"
+                     asp-append-version="true" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                <a href=@Url.Action("Deletepost","AdminB",new {id=item.PostCompanyID}) class=badge bg-danger deletehover">Delete</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

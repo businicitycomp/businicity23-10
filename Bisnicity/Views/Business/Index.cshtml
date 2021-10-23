@@ -1,0 +1,243 @@
+﻿@model Bisnicity.Models.BusniessViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "_Layout1";
+
+    var mess = TempData["messsages"] ?? string.Empty;
+}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="~/css/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,500;0,600;1,500&family=Fjalla+One&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cabin:ital,wght@0,500;0,600;1,500&family=Fjalla+One&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap"
+          rel="stylesheet">
+    <title>Businicity Home Page</title>
+    <link rel="icon" href="~/assets/images/logo-businicity.png" type="image/x-icon">
+</head>
+
+<body style="font-family: 'Rubik', sans-serif;">
+
+    <link href="~/css/toastr.css" rel="stylesheet" />
+
+    <section class="py-5 d-flex align-items-center" id="header">
+
+        <div class="container">
+            <div class="main-body">
+                <div class="row gutters-sm">
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column align-items-center text-center">
+                                    <img src="~/ProfilImage/@Model.pathimage" alt="Admin" class="rounded-circle" width="100%" height="auto">
+                                    <div class="mt-3">
+                                        <h4>@Model.FirstName @Model.LastName</h4>
+                                        <p class=" text-secondary" mb-1>@Model.CompanyName</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap d-grid gap-2 text-center">
+                                    @*<a class="btn text-white" style="background-color: #0c6e78; width:100%" href=@Url.Action("EditProfile","Business")>Edit My Profile</a>*@
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-globe mr-2 icon-inline">
+                                        </svg>  <i class="fab fa-linkedin"></i> LinkedIN
+                                    </h6>
+
+
+                                    <span class="text-secondary">@Model.Linklinkedin</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-github mr-2 icon-inline">
+
+                                        </svg><i class="far fa-envelope"></i> Email
+                                    </h6>
+                                    <span class="text-secondary">@Model.Email</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-github mr-2 icon-inline">
+
+                                        </svg><i class="far fa-envelope"></i> My Website
+                                    </h6>
+                                    <span class="text-secondary">www.buss.com</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">First Name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        @Model.FirstName
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Last Name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        @Model.LastName
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Phone</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        @Model.PhoneNo
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Company Name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        @Model.CompanyName
+                                    </div>
+                                </div>
+
+                                @*<div class="row">
+                                        <div class="col-sm-12">
+                                            <a class="btn btn-success " href=@Url.Action("EditprofileComp","Home")>Edit</a>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+
+                        <div class="row gutters-sm">
+
+                            <div class="col-sm-12 mb-3">
+                                <div class="card h-100">
+                                    <a href=@Url.Action("ChangePassword","Account") class="btn btn-outline-dark"><i class="fas fa-user-alt"></i> Change Password</a>
+                                    <a href=@Url.Action("ShowPerson","Business") class="btn btn-outline-dark"><i class="fas fa-user-alt"></i> Show Person</a>
+                                    <a href=@Url.Action("ShowTemplete","Business") class="btn btn-block btn-outline-dark"><i class="fas fa-archway"></i> Show Company Category</a>
+                                    <a href=@Url.Action("AddJob","Business") class="btn btn-outline-dark"><i class="fas fa-plus"></i> Add Job</a>
+                                    <a class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i> Add Post </a>
+                                    <a href=@Url.Action("ShowJob","Business") class="btn btn-outline-dark"><i class="fas fa-newspaper"></i> Company`s Jobs </a>
+                                    <a href=@Url.Action("ShowApplay","Business") class="btn btn-outline-dark"><i class="fas fa-newspaper"></i> Show Apply </a>
+                                    <a href=@Url.Action("MyPost","Business") class="btn btn-outline-dark"><i class="fas fa-newspaper"></i> My Post</a>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Your Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form asp-action="AddPost" enctype="multipart/form-data" method="post">
+                        <div class="modal-body">
+                            <label>Tittle</label>
+                            <input type="text" asp-for="Tittelpost">
+                            <br />
+                            <label>Upload Image</label>
+                            <input type="file" asp-for="postimage">
+                            <div class="form-floating mt-2">
+                                <textarea asp-for="detailspost" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Comments</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            @*<button type="button" class="btn btn-danger">Forget</button>*@
+                            <input type="submit" value="Save" class="btn btn-success" data-bs-dismiss="modal" />
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark p-4 text-white text-center" style="background-image: url(../assets/images/footer.png);">
+
+        <small>(c) 2021-2022 Written by BusinessCity</small>
+        <div class="icons">
+            <a href="#" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            var ss = '@mess';
+            if (ss) {
+                toastr.success(ss);
+            }
+        })
+</script>

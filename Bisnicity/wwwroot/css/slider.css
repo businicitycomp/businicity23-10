@@ -1,0 +1,45 @@
+﻿
+.section {
+    padding: 0rem 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .gallary {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(20, 4vw);
+    }
+
+    .item-1 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 7;
+    }
+
+    .item-2 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 7;
+        grid-row-end: 11;
+    }
+
+    .item-3 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 11;
+        grid-row-end: 15;
+    }
+
+    .item-4 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 15;
+        grid-row-end: 19;
+    }
+}
+
+.brands li img {
+    width: 100%;
+    object-fit: contain;
+    height: 12rem;
+}

@@ -1,0 +1,133 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Bisnicity.Models.DetailpersonViewModel
+@{
+    var mess = TempData["messsages"] ?? string.Empty;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusnisCity Person</title>
+    <link rel="icon" href="assets/images/logo-businicity.png" type="image/x-icon">
+    <link href="~/css/toastr.css" rel="stylesheet" />
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <section class="h-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-10">
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+
+                            <div class="col-xl-12">
+                                <div class="card-body p-md-5 text-black">
+                                    <nav aria-label="breadcrumb" class="main-breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a class="text-dark"
+                                                   href=@Url.Action("TempOfPerson","Person")>Show Category Person</a>
+                                            </li>
+                                            <li class="breadcrumb-item active">
+                                                <a class="text-danger">Add Person</a>
+                                            </li>
+
+                                        </ol>
+                                    </nav>
+                                    <h3 class="mb-5 text-uppercase  text-center">Add Details Person</h3>
+                                    <form asp-action="AddPerson" asp-controller="Person" enctype="multipart/form-data" method="post">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="form3Example1m">About Us</label>
+                                                    <input type="text" asp-for="AboutUs"
+                                                           class="form-control form-control-lg" />
+                                                    <span asp-validation-for="@Model.AboutUs" class="text-danger"></span>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="form3Example1n">Expirence</label>
+                                                    <input type="text" asp-for="Expirence"
+                                                           class="form-control form-control-lg" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="form3Example1m1">
+                                                        WhatsApp
+                                                        Link
+                                                    </label>
+                                                    <input type="url" asp-for="Whatslink"
+                                                           class="form-control form-control-lg" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="form3Example1n1">
+                                                        FaceBook
+                                                        Link
+                                                    </label>
+                                                    <input type="url" asp-for="Facebooklink"
+                                                           class="form-control form-control-lg" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form3Example8"> AboutImage</label>
+
+                                            <input type="file" asp-for="File"
+                                                   class="form-control form-control-lg" />
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="submit" class="btn btn-lg text-white mt-4"
+                                                   style="background-color: #178b90;" value="Save" />
+                                        </div>
+                                    </form>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/js/toastr.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var ss = '@mess';
+        if (ss) {
+            toastr.error(ss);
+        }
+    })
+</script>-->
